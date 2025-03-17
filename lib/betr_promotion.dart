@@ -7,15 +7,28 @@ class BetrPromotion extends StatelessWidget {
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(1, 9, 58, 211),
+        backgroundColor: const Color.fromRGBO(9, 58, 211, 1),
         actions: [
-          const Padding(padding: EdgeInsets.all(12)),
-          Row(
-            children: [
-              SvgPicture.asset('assets/images/icons/Group4315.svg'),
-              //const Spacer(),
-              SvgPicture.asset('assets/images/icons/BetRIcons.svg'),
-            ],
+          Container(
+            //width: double.infinity,
+            padding: const EdgeInsets.all(12),
+            child: Row(
+              // mainAxisSize: MainAxisSize.min,
+              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SvgPicture.asset(
+                  'assets/images/icons/Group4315.svg',
+                ),
+                const SizedBox(
+                  width: 160,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset('assets/images/icons/BetRIcons.svg'),
+                ),
+              ],
+            ),
           )
         ],
       ),
