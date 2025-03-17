@@ -128,20 +128,25 @@ class BetrPromotion extends StatelessWidget {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    Transform.rotate(
-                      angle: 45 * 3.1415926535 / 180,
-                      child: Container(
-                        width: 85,
-                        height: 24,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: const Color.fromRGBO(255, 177, 7, 1),
-                        ),
+                    SvgPicture.asset(
+                      'assets/images/icons/Union.svg',
+                    ),
+                    const Text(
+                      '\$150.00',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 13,
+                        height: 1.50,
+                        color: Color.fromRGBO(35, 38, 43, 1),
                       ),
                     ),
                   ],
                 ),
               ],
+            ),
+            const SizedBox(
+              height: 12,
             ),
           ],
         ),
