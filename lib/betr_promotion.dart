@@ -87,12 +87,61 @@ class BetrPromotion extends StatelessWidget {
               height: 12,
             ),
             Container(
-              width: 351,
+              width: double.infinity,
               height: 160,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 color: const Color.fromRGBO(9, 58, 211, 1),
               ),
+              child: Image.asset(
+                'assets/images/spin.png',
+              ),
+            ),
+            const SizedBox(
+              height: 18,
+            ),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/icons/giftBox.svg',
+                  height: 24,
+                  width: 24,
+                  colorFilter: const ColorFilter.mode(
+                      Color.fromRGBO(35, 38, 43, 1), BlendMode.srcIn),
+                ),
+                const SizedBox(
+                  width: 6,
+                ),
+                const Text(
+                  'Bonus Bets',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20,
+                    height: 1.50,
+                    color: Color.fromRGBO(35, 38, 43, 1),
+                  ),
+                ),
+                const SizedBox(
+                  width: 6,
+                ),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Transform.rotate(
+                      angle: 45 * 3.1415926535 / 180,
+                      child: Container(
+                        width: 85,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: const Color.fromRGBO(255, 177, 7, 1),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
