@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:promotion/bonus_list.dart';
+import 'package:promotion/model/bonus.dart';
 
-class BetrPromotion extends StatelessWidget {
+class BetrPromotion extends StatefulWidget {
   const BetrPromotion({super.key});
+  @override
+  State<BetrPromotion> createState() {
+    return _BetrPromotionState();
+  }
+}
 
+class _BetrPromotionState extends State<BetrPromotion> {
+  final List<Bonus> _bonusList = [
+    const Bonus(amount: 40.00, type: "BONUS", expiry: 4),
+    const Bonus(amount: 10.12, type: "BONUS", expiry: 6),
+    const Bonus(amount: 20.00, type: "LOYALTY", expiry: 8),
+    const Bonus(amount: 5.25, type: "BONUS", expiry: 2),
+    const Bonus(amount: 30.12, type: "LOYALTY", expiry: 3)
+  ];
   @override
   Widget build(context) {
-    final List _bonusList = [];
+    Widget mainContent = BonusList(bonuses: _bonusList);
     return Scaffold(
       appBar: AppBar(
         title: Padding(
@@ -150,8 +165,7 @@ class BetrPromotion extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            ListView.builder(
-                itemCount: _bonusList.length, itemBuilder: (context, index) {})
+            mainContent,
           ],
         ),
       ),
