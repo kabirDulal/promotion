@@ -3,8 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class BetrPromotion extends StatelessWidget {
   const BetrPromotion({super.key});
+
   @override
   Widget build(context) {
+    final List _bonusList = [];
     return Scaffold(
       appBar: AppBar(
         title: Padding(
@@ -148,6 +150,8 @@ class BetrPromotion extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
+            ListView.builder(
+                itemCount: _bonusList.length, itemBuilder: (context, index) {})
           ],
         ),
       ),
