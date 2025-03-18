@@ -21,7 +21,6 @@ class _BetrPromotionState extends State<BetrPromotion> {
   ];
   @override
   Widget build(context) {
-    Widget mainContent = BonusList(bonuses: _bonusList);
     return Scaffold(
       appBar: AppBar(
         title: Padding(
@@ -165,7 +164,15 @@ class _BetrPromotionState extends State<BetrPromotion> {
             const SizedBox(
               height: 12,
             ),
-            mainContent,
+            Container(
+              height: 96,
+              child: ListView.builder(
+                itemCount: _bonusList.length,
+                itemBuilder: (context, index) {
+                  return BonusList(bonuses: _bonusList);
+                },
+              ),
+            ),
           ],
         ),
       ),

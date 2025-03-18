@@ -6,10 +6,8 @@ class BonusList extends StatelessWidget {
   final List<Bonus> bonuses;
   @override
   Widget build(context) {
-    return Container(
-      height: 96,
-      // child: ListView.builder(
-      //           itemCount: _bonusList.length, itemBuilder: (context, index) {}),
+    return const Stack(
+      children: [],
     );
   }
 }
