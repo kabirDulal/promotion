@@ -307,7 +307,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
                           width: 58,
                         ),
                         SvgPicture.asset(
-                          'assets/images/icons/sportsIcon.svg',
+                          'assets/images/icons/racingIcon.svg',
                           height: 30,
                           width: 30,
                         ),

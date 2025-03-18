@@ -60,58 +60,57 @@ class WidgetBonusList extends StatelessWidget {
           //     ],
           //   ),
           // )
-          Container(
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const SizedBox(
-                  width: 8,
-                  height: 28,
-                  child: Text(
-                    '\$',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xFF093AD3),
-                      fontSize: 16,
-                      fontFamily: 'DezenProHeavy',
-                      fontWeight: FontWeight.w800,
-                    ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const SizedBox(
+                width: 8,
+                height: 28,
+                child: Text(
+                  '\$',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFF093AD3),
+                    fontSize: 16,
+                    fontFamily: 'DezenProHeavy',
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(
-                  width: 45,
-                  height: 30,
-                  child: Text(
-                    firstAmount,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Color(0xFF093AD3),
-                      fontSize: 34,
-                      fontFamily: 'DezenProHeavy',
-                      fontWeight: FontWeight.w800,
-                      height: 1,
-                    ),
+              ),
+              SizedBox(
+                width: 45,
+                height: 30,
+                child: Text(
+                  firstAmount,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Color(0xFF093AD3),
+                    fontSize: 34,
+                    fontFamily: 'DezenProHeavy',
+                    fontWeight: FontWeight.w400,
+                    height: 1,
                   ),
                 ),
-                SizedBox(
-                  width: 18,
-                  height: 28,
-                  child: Text(
-                    ".$secondAmount",
-                    style: const TextStyle(
-                      color: Color(0xFF093AD3),
-                      fontSize: 10,
-                      fontFamily: 'DezenProHeavy',
-                      fontWeight: FontWeight.w700,
-                      height: 1,
-                    ),
+              ),
+              SizedBox(
+                width: 18,
+                height: 28,
+                child: Text(
+                  ".$secondAmount",
+                  style: const TextStyle(
+                    color: Color(0xFF093AD3),
+                    fontSize: 10,
+                    fontFamily: 'DezenProHeavy',
+                    fontWeight: FontWeight.w400,
+                    height: 1,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
+
           const SizedBox(
             height: 6,
           ),
@@ -124,14 +123,14 @@ class WidgetBonusList extends StatelessWidget {
               style: const TextStyle(
                 color: Color(0xFF23262B),
                 fontSize: 16,
-                fontFamily: 'Dezen Pro',
-                fontWeight: FontWeight.w800,
+                fontFamily: 'DezenProHeavy',
+                fontWeight: FontWeight.w400,
                 height: 1,
               ),
             ),
           ),
           const SizedBox(
-            height: 3,
+            height: 4,
           ),
           Text(
             'Expiry: ${bonuses.expiry} hrs',

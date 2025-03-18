@@ -85,7 +85,7 @@ flutter:
   #         style: italic
     - family: DezenProHeavy
       fonts:
-        - asset: assets/fonts/DezenPro.ttf
+        - asset: assets/fonts/DezenProHeavy.otf
           weight: 700
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
