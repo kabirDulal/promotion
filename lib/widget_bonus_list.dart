@@ -16,7 +16,7 @@ class WidgetBonusList extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(right: 6),
           height: 96,
-          width: 87,
+          width: 82,
           decoration: BoxDecoration(
             color: const Color(0xFFE4E8F5),
             borderRadius: BorderRadius.circular(16),
@@ -149,44 +149,46 @@ class WidgetBonusList extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-          bottom: -8,
-          child: Container(
-            width: 53,
-            height: 20,
-            decoration: BoxDecoration(
-              color: const Color.fromRGBO(9, 58, 211, 1),
-              borderRadius: BorderRadius.circular(100),
-              border: Border.all(
-                width: 2,
-                color: Colors.white,
+        if (bonuses.showSplitIcon)
+          Positioned(
+            top: 85,
+            left: 18,
+            child: Container(
+              width: 53,
+              height: 20,
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(9, 58, 211, 1),
+                borderRadius: BorderRadius.circular(100),
+                border: Border.all(
+                  width: 2,
+                  color: Colors.white,
+                ),
+              ),
+              padding:
+                  const EdgeInsets.only(top: 1, right: 5, bottom: 2, left: 5),
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    'assets/images/icons/splitIcon.svg',
+                    width: 9,
+                    height: 9,
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  const Text(
+                    'Split',
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 10,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
               ),
             ),
-            padding:
-                const EdgeInsets.only(top: 2, right: 5, bottom: 2, left: 5),
-            child: Row(
-              children: [
-                SvgPicture.asset(
-                  'assets/images/icons/splitIcon.svg',
-                  width: 9,
-                  height: 9,
-                ),
-                const SizedBox(
-                  width: 3,
-                ),
-                const Text(
-                  'Split',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 10,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                )
-              ],
-            ),
           ),
-        ),
       ],
     );
   }

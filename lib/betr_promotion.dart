@@ -19,6 +19,20 @@ class _BetrPromotionState extends State<BetrPromotion> {
     const Bonus(amount: 5.25, type: "BONUS", expiry: 2, showSplitIcon: false),
     const Bonus(amount: 30.12, type: "LOYALTY", expiry: 3, showSplitIcon: false)
   ];
+  final List<BoostIcon> boostIconsList = [
+    BoostIcon(
+        name: "Horses",
+        boostNumber: 4,
+        iconPath: 'assets/images/icons/boostIcon.svg'),
+    BoostIcon(
+        name: "Horses",
+        boostNumber: 4,
+        iconPath: 'assets/images/icons/boostIcon.svg'),
+    BoostIcon(
+        name: "Horses",
+        boostNumber: 4,
+        iconPath: 'assets/images/icons/boostIcon.svg')
+  ];
   @override
   Widget build(context) {
     return Scaffold(
@@ -166,7 +180,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
               height: 12,
             ),
             SizedBox(
-              height: 96,
+              height: 107,
               child: ListView.builder(
                 scrollDirection: axisDirectionToAxis(AxisDirection.right),
                 itemCount: _bonusList.length,
@@ -176,7 +190,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
               ),
             ),
             const SizedBox(
-              height: 36,
+              height: 28,
             ),
             Row(
               children: [
@@ -298,6 +312,36 @@ class _BetrPromotionState extends State<BetrPromotion> {
                             ),
                           ),
                         ),
+                        Positioned(
+                          right: 68,
+                          top: 16,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(132, 255, 229, 1),
+                                  borderRadius: BorderRadius.circular(100),
+                                  border: Border.all(
+                                    width: 2,
+                                    color: const Color.fromRGBO(9, 58, 211, 1),
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                "4",
+                                style: TextStyle(
+                                  fontFamily: 'Inter',
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color.fromRGBO(9, 58, 211, 1),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -328,7 +372,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
                           width: 58,
                         ),
                         SvgPicture.asset(
-                          'assets/images/icons/sportsIcon.svg',
+                          'assets/images/icons/racingIcon.svg',
                           height: 30,
                           width: 30,
                         ),
@@ -369,6 +413,36 @@ class _BetrPromotionState extends State<BetrPromotion> {
                                 height: 1,
                               ),
                             ),
+                          ),
+                        ),
+                        Positioned(
+                          right: 68,
+                          top: 18,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(132, 255, 229, 1),
+                                  borderRadius: BorderRadius.circular(100),
+                                  border: Border.all(
+                                    width: 2,
+                                    color: const Color.fromRGBO(9, 58, 211, 1),
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                "4",
+                                style: TextStyle(
+                                  fontFamily: 'Inter',
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color.fromRGBO(9, 58, 211, 1),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -429,9 +503,36 @@ class _BetrPromotionState extends State<BetrPromotion> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 12,
+            ),
+            SizedBox(
+              height: 70,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: boostIconsList.length,
+                  itemBuilder: (context, index) {
+                    return SingleBoostWidget(boostIconsList[index]);
+                  }),
+            )
           ],
         ),
       ),
+    );
+  }
+
+  Widget SingleBoostWidget(BoostIcon boostIcon) {
+    return Container(
+      height: 58,
+      width: 58,
+      decoration: BoxDecoration(
+          color: const Color.fromRGBO(228, 232, 245, 1),
+          borderRadius: BorderRadius.circular(100),
+          border: Border.all(
+            color: const Color.fromRGBO(9, 58, 211, 1),
+            width: 2,
+          )),
+      child: Text('${boostIcon.name}'),
     );
   }
 }
