@@ -20,18 +20,26 @@ class _BetrPromotionState extends State<BetrPromotion> {
     const Bonus(amount: 30.12, type: "LOYALTY", expiry: 3, showSplitIcon: false)
   ];
   final List<BoostIcon> boostIconsList = [
-    BoostIcon(
-        name: "Horses",
+    const BoostIcon(
+        name: "Horse",
+        boostNumber: 3,
+        iconPath: 'assets/images/icons/horseIconOutlined.svg'),
+    const BoostIcon(
+        name: "Greyhound",
         boostNumber: 4,
-        iconPath: 'assets/images/icons/boostIcon.svg'),
-    BoostIcon(
-        name: "Horses",
-        boostNumber: 4,
-        iconPath: 'assets/images/icons/boostIcon.svg'),
-    BoostIcon(
-        name: "Horses",
-        boostNumber: 4,
-        iconPath: 'assets/images/icons/boostIcon.svg')
+        iconPath: 'assets/images/icons/greyHoundIconOutlined.svg'),
+    const BoostIcon(
+        name: "Harness",
+        boostNumber: 1,
+        iconPath: 'assets/images/icons/harnessIconOutlined.svg'),
+    const BoostIcon(
+        name: "SGM",
+        boostNumber: 1,
+        iconPath: 'assets/images/icons/sgmIconOutlined.svg'),
+    const BoostIcon(
+        name: "Multi",
+        boostNumber: 1,
+        iconPath: 'assets/images/icons/multiIconOutlined.svg'),
   ];
   @override
   Widget build(context) {
@@ -507,7 +515,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
               height: 12,
             ),
             SizedBox(
-              height: 70,
+              height: 77,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: boostIconsList.length,
@@ -524,7 +532,8 @@ class _BetrPromotionState extends State<BetrPromotion> {
   Widget SingleBoostWidget(BoostIcon boostIcon) {
     return Container(
       height: 58,
-      width: 58,
+      width: 77,
+      margin: const EdgeInsets.only(right: 15),
       decoration: BoxDecoration(
           color: const Color.fromRGBO(228, 232, 245, 1),
           borderRadius: BorderRadius.circular(100),

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Bonus {
   const Bonus(
       {required this.amount,
@@ -10,20 +8,6 @@ class Bonus {
   final String type;
   final int expiry;
   final bool showSplitIcon;
-}
-
-class BoostIcons {
-  const BoostIcons(
-      {required this.horse,
-      required this.greyHound,
-      required this.harness,
-      required this.sgm,
-      required this.multi});
-  final Icon horse;
-  final Icon greyHound;
-  final Icon harness;
-  final Icon sgm;
-  final Icon multi;
 }
 
 class BoostIcon {
