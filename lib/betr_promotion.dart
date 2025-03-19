@@ -13,11 +13,11 @@ class BetrPromotion extends StatefulWidget {
 
 class _BetrPromotionState extends State<BetrPromotion> {
   final List<Bonus> _bonusList = [
-    const Bonus(amount: 40.00, type: "BONUS", expiry: 4),
-    const Bonus(amount: 10.12, type: "BONUS", expiry: 6),
-    const Bonus(amount: 20.00, type: "LOYALTY", expiry: 8),
-    const Bonus(amount: 5.25, type: "BONUS", expiry: 2),
-    const Bonus(amount: 30.12, type: "LOYALTY", expiry: 3)
+    const Bonus(amount: 40.00, type: "BONUS", expiry: 4, showSplitIcon: true),
+    const Bonus(amount: 10.12, type: "BONUS", expiry: 6, showSplitIcon: false),
+    const Bonus(amount: 20.00, type: "LOYALTY", expiry: 8, showSplitIcon: true),
+    const Bonus(amount: 5.25, type: "BONUS", expiry: 2, showSplitIcon: false),
+    const Bonus(amount: 30.12, type: "LOYALTY", expiry: 3, showSplitIcon: false)
   ];
   @override
   Widget build(context) {
@@ -165,7 +165,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
             const SizedBox(
               height: 12,
             ),
-            Container(
+            SizedBox(
               height: 96,
               child: ListView.builder(
                 scrollDirection: axisDirectionToAxis(AxisDirection.right),
