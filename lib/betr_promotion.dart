@@ -515,12 +515,12 @@ class _BetrPromotionState extends State<BetrPromotion> {
               height: 12,
             ),
             SizedBox(
-              height: 77,
+              height: 84,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: boostIconsList.length,
                   itemBuilder: (context, index) {
-                    return SingleBoostWidget(boostIconsList[index]);
+                    return singleBoostWidget(boostIconsList[index]);
                   }),
             )
           ],
@@ -529,19 +529,66 @@ class _BetrPromotionState extends State<BetrPromotion> {
     );
   }
 
-  Widget SingleBoostWidget(BoostIcon boostIcon) {
-    return Container(
-      height: 58,
-      width: 77,
-      margin: const EdgeInsets.only(right: 15),
-      decoration: BoxDecoration(
-          color: const Color.fromRGBO(228, 232, 245, 1),
-          borderRadius: BorderRadius.circular(100),
-          border: Border.all(
-            color: const Color.fromRGBO(9, 58, 211, 1),
-            width: 2,
-          )),
-      child: Text('${boostIcon.name}'),
+  Widget singleBoostWidget(BoostIcon boostIcon) {
+    String boostNumberString = boostIcon.boostNumber.toString();
+    return Column(
+      children: [
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            Container(
+              height: 58,
+              width: 58,
+              //margin: const EdgeInsets.only(left: 18, bottom: 3, right: 12),
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(228, 232, 245, 1),
+                borderRadius: BorderRadius.circular(100),
+                border: Border.all(
+                  color: const Color.fromRGBO(9, 58, 211, 1),
+                  width: 2,
+                ),
+              ),
+            ),
+            SvgPicture.asset(boostIcon.iconPath),
+            Positioned(
+              top: 0,
+              right: 0,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(9, 58, 211, 1),
+                      borderRadius: BorderRadius.circular(100),
+                      border: Border.all(
+                        width: 2,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    boostNumberString,
+                    style: const TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        Text(
+          boostIcon.name,
+          textAlign: TextAlign.center,
+          style:
+              const TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
+        ),
+      ],
     );
   }
 }
