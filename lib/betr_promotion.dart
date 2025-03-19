@@ -259,6 +259,27 @@ class _BetrPromotionState extends State<BetrPromotion> {
                           height: 30,
                           width: 30,
                         ),
+                        Positioned(
+                          bottom: 10,
+                          child: SizedBox(
+                            width: 80,
+                            height: 18,
+                            child: Text(
+                              'SPORTS',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: 'DezenProHeavy',
+                                fontWeight: FontWeight.w400,
+                                height: 1,
+                                foreground: Paint()
+                                  ..style = PaintingStyle.stroke
+                                  ..strokeWidth = 5
+                                  ..color = const Color.fromRGBO(9, 58, 211, 1),
+                              ),
+                            ),
+                          ),
+                        ),
                         const Positioned(
                           bottom: 10,
                           child: SizedBox(
@@ -271,12 +292,12 @@ class _BetrPromotionState extends State<BetrPromotion> {
                                 color: Colors.white,
                                 fontSize: 20,
                                 fontFamily: 'DezenProHeavy',
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w400,
                                 height: 1,
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -307,9 +328,30 @@ class _BetrPromotionState extends State<BetrPromotion> {
                           width: 58,
                         ),
                         SvgPicture.asset(
-                          'assets/images/icons/racingIcon.svg',
+                          'assets/images/icons/sportsIcon.svg',
                           height: 30,
                           width: 30,
+                        ),
+                        Positioned(
+                          bottom: 10,
+                          child: SizedBox(
+                            width: 80,
+                            height: 18,
+                            child: Text(
+                              'RACING',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: 'DezenProHeavy',
+                                fontWeight: FontWeight.w400,
+                                height: 1,
+                                foreground: Paint()
+                                  ..style = PaintingStyle.stroke
+                                  ..strokeWidth = 5
+                                  ..color = const Color.fromRGBO(9, 58, 211, 1),
+                              ),
+                            ),
+                          ),
                         ),
                         const Positioned(
                           bottom: 10,
@@ -323,12 +365,12 @@ class _BetrPromotionState extends State<BetrPromotion> {
                                 color: Colors.white,
                                 fontSize: 20,
                                 fontFamily: 'DezenProHeavy',
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w400,
                                 height: 1,
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
