@@ -41,6 +41,14 @@ class _BetrPromotionState extends State<BetrPromotion> {
         boostNumber: 1,
         iconPath: 'assets/images/icons/multiIconOutlined.svg'),
   ];
+  final List<ExclusivePromotion> exclusivePromotionList = [
+    const ExclusivePromotion(
+        iconPath: 'assets/images/icons/multiIconOutlined.svg'),
+    const ExclusivePromotion(
+        iconPath: 'assets/images/icons/multiIconOutlined.svg'),
+    const ExclusivePromotion(
+        iconPath: 'assets/images/icons/multiIconOutlined.svg'),
+  ];
   @override
   Widget build(context) {
     return Scaffold(
@@ -59,7 +67,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
         backgroundColor: const Color.fromRGBO(9, 58, 211, 1),
         actions: [
           IconButton(
-            padding: const EdgeInsets.only(bottom: 30, right: 12),
+            padding: const EdgeInsets.only(bottom: 40, right: 12),
             onPressed: () {},
             icon: SvgPicture.asset('assets/images/icons/BetRIcons.svg'),
           ),
@@ -71,7 +79,8 @@ class _BetrPromotionState extends State<BetrPromotion> {
           left: 12,
           right: 12,
         ),
-        child: Column(
+        child: ListView(
+          scrollDirection: Axis.vertical,
           children: [
             Row(
               children: [
@@ -123,17 +132,18 @@ class _BetrPromotionState extends State<BetrPromotion> {
               ],
             ),
             const SizedBox(
-              height: 12,
+              height: 18,
             ),
-            Container(
-              width: double.infinity,
-              height: 160,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: const Color.fromRGBO(9, 58, 211, 1),
-              ),
-              child: Image.asset(
-                'assets/images/spin.png',
+            SizedBox(
+              height: 165,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: exclusivePromotionList.length,
+                itemBuilder: (context, index) {
+                  return exclusivePromotionWidget(
+                      exclusivePromotionList[index]);
+                },
               ),
             ),
             const SizedBox(
@@ -185,7 +195,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
               ],
             ),
             const SizedBox(
-              height: 12,
+              height: 18,
             ),
             SizedBox(
               height: 107,
@@ -198,7 +208,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
               ),
             ),
             const SizedBox(
-              height: 28,
+              height: 36,
             ),
             Row(
               children: [
@@ -515,16 +525,65 @@ class _BetrPromotionState extends State<BetrPromotion> {
               height: 12,
             ),
             SizedBox(
-              height: 84,
+              height: 81,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: boostIconsList.length,
                   itemBuilder: (context, index) {
                     return singleBoostWidget(boostIconsList[index]);
                   }),
-            )
+            ),
+            const SizedBox(
+              height: 36,
+            ),
+            Container(
+              height: 50,
+              margin: const EdgeInsets.only(bottom: 72),
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(9, 58, 211, 1),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      children: [
+                        Text(
+                          'For more promotions',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: SvgPicture.asset(
+                        'assets/images/icons/greaterThanIcon.svg'),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget exclusivePromotionWidget(ExclusivePromotion exclusivePromotion) {
+    return Container(
+      width: 360,
+      height: 160,
+      margin: const EdgeInsets.only(right: 20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        color: const Color.fromRGBO(9, 58, 211, 1),
+      ),
+      child: SvgPicture.asset(
+        exclusivePromotion.iconPath,
       ),
     );
   }
@@ -551,8 +610,8 @@ class _BetrPromotionState extends State<BetrPromotion> {
                   ),
                 ),
               ),
-              SvgPicture.asset(boostIcon.iconPath,
-              
+              SvgPicture.asset(
+                boostIcon.iconPath,
               ),
               Positioned(
                 top: 0,
@@ -586,11 +645,16 @@ class _BetrPromotionState extends State<BetrPromotion> {
               ),
             ],
           ),
+          const SizedBox(
+            height: 4,
+          ),
           Text(
             boostIcon.name,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontWeight: FontWeight.w600,
+              fontFamily: 'Inter',
+              fontSize: 13,
+              fontWeight: FontWeight.w700,
               color: Colors.black,
             ),
           ),

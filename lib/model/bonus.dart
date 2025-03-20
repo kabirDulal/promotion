@@ -17,3 +17,7 @@ class BoostIcon {
   final int boostNumber;
   final String iconPath;
 }
+class ExclusivePromotion {
+  const ExclusivePromotion({required this.iconPath});
+  final String iconPath;
+}
