@@ -42,8 +42,7 @@ class _BetrPromotionState extends State<BetrPromotion> {
         iconPath: 'assets/images/icons/multiIconOutlined.svg'),
   ];
   final List<ExclusivePromotion> exclusivePromotionList = [
-    const ExclusivePromotion(
-        iconPath: 'assets/images/icons/multiIconOutlined.svg'),
+    const ExclusivePromotion(iconPath: 'assets/images/spin.png'),
     const ExclusivePromotion(
         iconPath: 'assets/images/icons/multiIconOutlined.svg'),
     const ExclusivePromotion(
@@ -545,20 +544,32 @@ class _BetrPromotionState extends State<BetrPromotion> {
               ),
               child: Row(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Column(
+                  Container(
+                    padding: const EdgeInsets.only(top: 8, left: 12),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'For more promotions',
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 13,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        Text(
+                          'Check out our promotions page',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
                           ),
                         ),
                       ],
                     ),
                   ),
+                  const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: SvgPicture.asset(
